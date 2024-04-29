@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		// Mendapatkan nilai input
 		const name = document.getElementById('name').value.trim()
-		const email = document.getElementById('email').value.trim()
 		const phone = document.getElementById('phone').value.trim()
+		const email = document.getElementById('email').value.trim()
 		const message = document.getElementById('message').value.trim()
 
 		// Validasi input
@@ -23,6 +23,14 @@ document.addEventListener('DOMContentLoaded', function () {
 			alert('Silakan masukkan alamat email yang valid.')
 			return
 		}
+
+		const whatsappNumber = '+6282256235690'
+		const whatsappMessage = `Name: ${name}\nPhone: ${phone}\nMessage: ${message}`
+
+		const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(
+			whatsappMessage
+		)}`
+		window.location.href = whatsappUrl
 	})
 })
 
