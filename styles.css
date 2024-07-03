@@ -34,3 +34,8 @@ button[data-toggle-navbar][data-is-open='true'] #line-3 {
 #toTopBtn {
 	z-index: 9999;
 }
+
+.pricing-card:hover {
+	transform: scale(1.05);
+	transition: transform 0.5s ease;
+}

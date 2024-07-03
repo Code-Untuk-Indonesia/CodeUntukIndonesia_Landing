@@ -34,6 +34,25 @@ document.addEventListener('DOMContentLoaded', function () {
 	})
 })
 
+// pricelist
+document.addEventListener('DOMContentLoaded', function () {
+	const orderButtons = document.querySelectorAll('.order-btn')
+
+	orderButtons.forEach((button) => {
+		button.addEventListener('click', function (event) {
+			event.preventDefault()
+			const packageName = this.getAttribute('data-package')
+			const message = `Halo kak, saya berminat dengan paket ${packageName}. Bisa dibantu untuk info lebih lanjut?`
+			const phoneNumber = '6282256235690'
+			const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(
+				message
+			)}`
+
+			window.open(whatsappUrl, '_blank')
+		})
+	})
+})
+
 const btnHumb = document.querySelector('[data-toggle-navbar]')
 const navbar = document.querySelector('[data-navbar]')
 const overlay = document.querySelector('[data-nav-overlay]')
